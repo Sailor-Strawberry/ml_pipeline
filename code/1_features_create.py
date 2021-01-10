@@ -9,6 +9,7 @@ from base import Feature, get_arguments, generate_features
 from sklearn.preprocessing import LabelEncoder
 import warnings
 import jpholiday
+import optuna.integration.lightgbm as lgb
 
 sys.path.append(os.pardir)
 sys.path.append('../..')
