@@ -25,6 +25,15 @@ Feature.dir = yml['SETTING']['FEATURE_PATH']  # 生成した特徴量の出力�
 feature_memo_path = Feature.dir + '_features_memo.csv'
 
 
+#循環特徴量生成用
+def make_harmonic_features_cos(value, period):
+    value *= 2 * np.pi / period 
+    return np.cos(value)
+
+def make_harmonic_features_sin(value, period):
+    value *= 2 * np.pi / period 
+    return np.sin(value)
+
 
 # Target
 class hoge(Feature):
