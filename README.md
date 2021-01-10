@@ -53,3 +53,13 @@ class hoge(Feature):
         self.test['hoge'] = le.transform(test[cols])
         create_memo('hoge','ここに変数の説明を入力')
 ```
+
+## 特徴量生成テンプレート(循環特徴量)
+```sh
+class hoge(Feature):
+    def create_features(self):
+        dow_make_features_cos = partial(make_harmonic_features_cos, period=12)
+        self.train['hoge'] = pd.to_datetime(train['date'],format='%Y%m%d').dt.month.apply(dow_make_features_cos).astype('float32')
+        self.test['hoge'] = pd.to_datetime(test['date'],format='%Y%m%d').dt.month.apply(dow_make_features_cos).astype('float32')
+        create_memo('hoge','月の循環化')
+```
