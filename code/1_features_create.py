@@ -44,7 +44,7 @@ class hoge(Feature):
     def create_features(self):
         self.train['hoge'] = train['hoge']
         self.test['hoge'] = test['hoge']
-        create_memo('hoge','ここに変数の説明を入力')
+        create_memo('hoge','ここに変数の説明を入力.')
 
 class hoge(Feature):
     def create_features(self):
@@ -53,7 +53,7 @@ class hoge(Feature):
         le = LabelEncoder().fit(tmp_df[cols])
         self.train['hoge'] = le.transform(train[cols])
         self.test['hoge'] = le.transform(test[cols])
-        create_memo('hoge','ここに変数の説明を入力')
+        create_memo('hoge','ここに変数の説明を入力.')
 
 
 
